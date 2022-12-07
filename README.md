@@ -1,2 +1,0 @@
-# Sitdownpls
-project online shop
