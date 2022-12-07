@@ -1,0 +1,100 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.footer {
+  &__top {
+    padding: 26px 0 18px;
+    background-color: $md-grey;
+  }
+
+  &__container {
+    @include space-between;
+  }
+
+  &__logo {
+    display: block;
+    margin-bottom: 29px;
+  }
+
+  &__nav {
+    @include space-between;
+    width: 65.859%;
+  }
+
+  &__social-list {
+    display: flex;
+  }
+
+  &__list-subheading {
+    margin: 0 0 10px;
+    font-size: $prime-font-size;
+    line-height: $prime-line-height;
+    font-weight: 400;
+  }
+
+  &__social-list-link,
+  &__social-list-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  &__social-list-link {
+    display: inline-block;
+    transition: background 0.2s ease-in;
+
+    &:focus-visible {
+      background-color: $purple-focus;
+
+      .footer__social-list-icon {
+        fill: $white-color;
+      }
+    }
+  }
+
+  &__social-list-icon {
+    fill: $grey-color;
+    transition: fill 0.2s ease-in;
+
+    &:hover {
+      fill: $purple-color;
+    }
+
+    &:active {
+      fill: $purple-active;
+    }
+  }
+
+  &__list-link {
+    font-size: $middle-font-size;
+    line-height: $prime-line-height;
+    color: $grey-color;
+    transition: color 0.2s ease-in, background 0.2s ease-in;
+
+    &.focus-visible {
+      background: $pink-violet;
+      color: $purple-active;
+    }
+
+    &:hover {
+      color: $purple-color;
+    }
+
+    &:active {
+      color: $purple-active;
+    }
+  }
+
+  &__social-list-item:not(:last-child) {
+    margin-right: 20px;
+  }
+
+  &__bottom {
+    @include center;
+  }
+
+  &__copyright {
+    font-size: $middle-font-size;
+    line-height: 30px;
+    color: $grey-color;
+  }
+}

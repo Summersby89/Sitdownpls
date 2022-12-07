@@ -1,0 +1,51 @@
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-start {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+@mixin align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin small-font {
+  font-size: $small-font-size;
+  line-height: $prime-line-height;
+}
+
+@mixin column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@mixin space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin prime-font {
+  font-size: $prime-font-size;
+  line-height: $prime-line-height;
+}
+
+@mixin secondary-font {
+  font-size: $prime-font-size;
+  line-height: $menu-line-height;
+}
+
+@mixin focus-btn-style {
+  border-color: $purple-active;
+  background-color: $purple-focus;
+}

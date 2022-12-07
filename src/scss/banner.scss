@@ -1,0 +1,41 @@
+@import "_vars.scss";
+
+.banner {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  &__container {
+    padding-top: 154px;
+    padding-bottom: 150px;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    width: 100%;
+  }
+
+  &__picture {
+    display: block;
+    grid-column: 1 / -1;
+    grid-row: 1 / 2;
+    font-size: 0;
+  }
+
+  &__subheading {
+    margin: 0;
+    font-family: "Play Fair";
+    font-size: 60px;
+    line-height: $secondary-line-height;
+    color: #d5b986;
+  }
+
+  &__text {
+    margin: 0 0 50px;
+    max-width: 508px;
+    font-size: $slider-subheading;
+    line-height: $secondary-line-height;
+    color: $white-color;
+  }
+
+  &__btn {
+    padding: 18px 33px;
+  }
+}

@@ -1,0 +1,112 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.cooperations {
+  padding-bottom: 70px;
+
+  &__breadcrumbs {
+    margin-bottom: 20px;
+  }
+
+  &__subheading {
+    margin-bottom: 33px;
+
+    &-secondary {
+      margin: 0 0 14px;
+    }
+  }
+
+  &__list-whats-get {
+    margin-bottom: 34px;
+    width: 49%;
+
+    &-item {
+      padding-left: 37px;
+      background-position: top left;
+      background-repeat: no-repeat;
+
+      &:first-child {
+        background-image: url("../img/network.png");
+      }
+
+      &:nth-child(2) {
+        background-image: url("../img/briefcase.png");
+      }
+
+      &:last-child {
+        background-image: url("../img/git-pull-request.png");
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 12px;
+      }
+
+      p {
+        line-height: 150%;
+      }
+    }
+
+  }
+
+  &__text {
+    max-width: 842px;
+    line-height: $page-card-line-height;
+    color: $grey-shade;
+
+    &-margin {
+      margin-bottom: 34px;
+    }
+
+    &-advantages {
+      margin-bottom: 12px;
+      &-last {
+        margin-bottom: 34px;
+      }
+    }
+  }
+
+  &__card-subheading-margin {
+    margin: 0 0 11px;
+  }
+
+  &__subheading-ordered {
+    margin: 0 0 14px;
+    @include secondary-font;
+    font-weight: 600;
+    color: $orange-color;
+  }
+
+  &__ordered-list {
+    margin: 0 0 32px;
+    padding-left: 18px;
+
+    &-item {
+      &::marker {
+        font-size: $prime-font-size;
+        color: $orange-color;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 14px;
+      }
+
+      p {
+        padding-left: 8px;
+        max-width: 817px;
+      }
+    }
+  }
+
+  &__bottom-block {
+    @include align-center;
+    max-width: 624px;
+
+    &-img {
+      margin-right: 32px;
+    }
+
+    &-subheading {
+      line-height: 150%;
+    }
+  }
+}

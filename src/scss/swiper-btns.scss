@@ -1,0 +1,63 @@
+@import "_vars.scss";
+
+.swiper-pagination-bullet-active {
+  .pagination-progress__circle {
+    animation: slide-progress 3s cubic-bezier((0, 0, 1, 1)) forwards;
+  }
+}
+
+.arrow-in-circle-btn-prev,
+.arrow-in-circle-btn-next {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  vertical-align: middle;
+  position: static;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid $purple-color;
+  transition: background 0.2s ease-in, border-color 0.2s ease-in;
+  &:hover {
+    background-color: $purple-color;
+    .small-arrow-icon {
+      stroke: $white-color;
+    }
+  }
+
+  &:focus-visible {
+    background-color: $purple-focus;
+    border-color: $purple-color;
+    .small-arrow-icon {
+      stroke: $white-color;
+    }
+  }
+
+  &:active {
+    background-color: $purple-active;
+    border-color: $purple-active;
+  }
+}
+
+.arrow-in-circle-btn-prev {
+  margin-right: 13px;
+  .small-arrow-icon {
+    transform: rotate(180deg);
+  }
+}
+
+.arrow-in-circle-btn-prev.swiper-button-disabled,
+.arrow-in-circle-btn-next.swiper-button-disabled {
+  border-color: $grey-color;
+}
+
+.arrow-in-circle-btn-prev.swiper-button-disabled .small-arrow-icon,
+.arrow-in-circle-btn-next.swiper-button-disabled .small-arrow-icon {
+  stroke: $grey-color;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  display: none;
+}

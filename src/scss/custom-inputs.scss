@@ -1,0 +1,40 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.custom-checkbox-content {
+  @include align-center;
+  padding-left: 23px;
+  position: relative;
+  font-size: $middle-font-size;
+  line-height: 19px;
+  z-index: 3;
+  cursor: pointer;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition: color 0.2s ease-in-out, outline-color .2s ease-in-out;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border: 1px solid $grey-color;
+    border-radius: 2px;
+    transition: border-color .2s ease-in-out, background .2s ease-in-out;
+    background-position: center;
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+  }
+}
+
+.custom-input-checkbox:checked + .custom-checkbox-content::before {
+  background-image: url("../img/check.png");
+  background-color: $purple-color;
+  border-color: $purple-color;
+}
+
+.custom-input-checkbox.focus-visible + .custom-checkbox-content {
+  outline-color: $purple-color;
+}

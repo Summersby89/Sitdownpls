@@ -1,0 +1,404 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.header {
+  background: linear-gradient(180deg, #f6f6f6 24%, #fff0 24%);
+
+  &__container {
+    grid-row-gap: $gap;
+    align-items: center;
+  }
+
+  &__top-nav {
+    grid-column: 5 / span 8;
+    padding: 15px 0;
+  }
+
+  &__top-nav-mobile {
+    display: none;
+  }
+
+  &__region {
+    @include align-center;
+  }
+
+  &__burger {
+    display: none;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      border-radius: 4px;
+      background: $purple-color;
+      transition: transform 0.2s ease-in;
+    }
+    &::before {
+      top: 0;
+    }
+    &-line {
+      position: absolute;
+      top: 11px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      border-radius: 4px;
+      background: $purple-color;
+      transition: transform 0.2s ease-in;
+    }
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  &__account,
+  &__user-icon {
+    width: 26px;
+    height: 28px;
+  }
+
+  &__basket,
+  &__basket-icon {
+    width: 30px;
+    height: 28px;
+  }
+
+  &__user-icon,
+  &__basket-icon {
+    fill: $purple-color;
+    transition: fill 0.2s ease-in;
+  }
+
+  &__basket {
+    margin-left: 42px;
+    position: relative;
+  }
+
+  &__account:focus-visible,
+  &__basket:focus-visible {
+    background-color: $purple-focus;
+
+    .header__user-icon,
+    .header__basket-icon {
+      fill: $white-color;
+    }
+  }
+
+  &__basket-counter {
+    @include center;
+    position: absolute;
+    top: 4px;
+    left: -9px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: $orange-color;
+    color: $white-color;
+    @include small-font;
+    pointer-events: none;
+  }
+
+  &__account,
+  &__basket {
+    &:hover {
+      .header__user-icon,
+      .header__basket-icon {
+        fill: $purple-focus;
+      }
+    }
+  }
+
+  &__logo {
+    grid-column: 1 / span 2;
+    grid-row: 2;
+  }
+
+  &__phone-link {
+    @include align-center;
+    padding-left: 20px;
+    font-size: $middle-font-size;
+    line-height: 1.9;
+    color: $orange-color;
+    background-image: url("../img/phone-icon.svg");
+    background-position: left center;
+    background-repeat: no-repeat;
+    transition: color 0.2s ease-in;
+
+    &:hover {
+      color: #ffbd59;
+
+      svg {
+        fill: #ffbd59;
+      }
+    }
+
+    &:focus-visible {
+      background-color: #fff5d1;
+    }
+  }
+
+  &__menu {
+    grid-column: 3 / span 10;
+    grid-row: 2 / span 1;
+  }
+
+  &__top-nav-list,
+  &__bottom-nav-list {
+    @include flex-end;
+  }
+
+  &__left-block {
+    grid-column: 1 / span 4;
+    @include align-center;
+  }
+
+  &__top-nav-list-item:not(:last-child) {
+    margin-right: 64px;
+  }
+
+  &__top-nav-list-link {
+    font-size: $middle-font-size;
+    line-height: $prime-line-height;
+    color: $grey-color;
+    transition: color 0.2s ease-in, background 0.2s ease-in;
+
+    &:hover {
+      color: $purple-color;
+    }
+
+    &.focus-visible {
+      color: $purple-active;
+    }
+
+    &:active {
+      color: $purple-active;
+    }
+  }
+
+  &__bottom-nav-list-item:not(:last-child) {
+    margin-right: 93px;
+  }
+
+  &__bottom-nav-list-link {
+    line-height: $menu-line-height;
+    transition: color 0.2s ease-in;
+
+    &:hover {
+      color: $purple-color;
+    }
+
+    &:active {
+      color: $purple-active;
+    }
+  }
+
+  &__form {
+    @include space-between;
+    grid-column: 1 / span 10;
+  }
+
+  &__search-inner {
+    @include align-center;
+    position: relative;
+    width: 100%;
+  }
+
+  &__form-input {
+    padding: 16px 59px;
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background: $grey-light;
+    border: 2px solid transparent;
+    border-radius: $radius 0px 0px $radius;
+    outline: none;
+    transition: background 0.2s ease-in, border-color 0.2s ease-in;
+
+    &:hover {
+      background: $md-grey;
+    }
+
+    &.focus-visible {
+      border-color: $purple-active;
+      background: $pink-light;
+    }
+  }
+
+  &__search-icon {
+    position: absolute;
+    top: 50%;
+    left: 33px;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  &__arrow-slim-icon {
+    width: 13px;
+    height: 8px;
+  }
+
+  &__search-btn {
+    @include center;
+    position: absolute;
+    top: 50%;
+    right: 33px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid $purple-color;
+    transform: translateY(-50%);
+    z-index: 2;
+    transition: background 0.2s ease-in, border-color 0.2s ease-in;
+
+    &:hover {
+      background: $purple-color;
+      .small-arrow-icon {
+        stroke: $white-color;
+      }
+    }
+
+    &:focus-visible {
+      background-color: $purple-focus;
+      border-color: $purple-color;
+      .small-arrow-icon {
+        stroke: $white-color;
+      }
+    }
+
+    &:active {
+      background: $purple-active;
+    }
+  }
+
+  &__left-block .choices {
+    margin-right: 16px;
+    margin-bottom: 0;
+    border: none;
+
+    &[data-type*="select-one"] .choices__inner {
+      padding-bottom: 0;
+    }
+
+    &__inner {
+      @include align-center;
+      margin-bottom: 0;
+      padding: 0 18px 0 0;
+      border: none;
+      font-size: $prime-font-size;
+      line-height: $secondary-line-height;
+      color: $purple-color;
+      min-width: 85px;
+      min-height: auto;
+    }
+  }
+
+  &__left-block .choices__list--dropdown,
+  &__left-block .choices__list[aria-expanded] {
+    word-break: normal;
+  }
+
+  .choices.is-open .choices__list--dropdown,
+  .choices.is-open .choices__list[aria-expanded] {
+    border: 2px solid $grey-light;
+    border-radius: 0;
+    background-color: $white-color;
+  }
+
+  &__left-block .choices__list--dropdown .choices__list,
+  &__left-block .choices__list[aria-expanded] .choices__list {
+    overflow: unset;
+  }
+
+  .choices[data-type*="select-one"]::after {
+    content: "";
+    position: absolute;
+    top: calc(50% - 3px);
+    right: 18px;
+    width: 8px;
+    height: 8px;
+    border-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-color: $purple-color;
+    border-left: 1px;
+    border-bottom: 1px;
+    transform: rotate(135deg);
+  }
+
+  .choices[data-type*="select-one"].is-open:after {
+    margin-top: 0;
+    border-color: $purple-color;
+    transform: rotate(315deg);
+  }
+
+  &__form .choices {
+    min-width: 300px;
+    z-index: 13;
+  }
+
+  &__form .choices.is-focused .choices__inner {
+    background-color: $pink-light;
+    border-color: $purple-color;
+  }
+
+  &__form .choices:active .choices__inner {
+    border-color: $purple-active;
+  }
+
+  &__form .choices[data-type*="select-one"] .choices__inner {
+    padding: 13px 28px;
+  }
+
+  &__form .choices__list--dropdown {
+    padding: 30px 22px;
+    margin-top: 0px;
+    border: 2px solid $grey-light;
+    border-bottom-right-radius: $radius;
+    border-bottom-left-radius: $radius;
+    column-count: 2;
+    min-width: 100%;
+    word-break: normal;
+    background-color: $white-color;
+    z-index: 13;
+  }
+
+  &__form .choices__inner {
+    border: 2px solid $grey-light;
+    border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    @include secondary-font;
+    background-color: $white-color;
+    transition: border 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  }
+
+  &__form .choices:hover .choices__inner {
+    border-color: $purple-color;
+  }
+
+  &__form .choices__item {
+    color: $purple-color;
+  }
+
+  &__form .choices__list--dropdown .choices__list,
+  &__form .choices__list[aria-expanded] .choices__list {
+    overflow: unset;
+  }
+
+  &__form .choices__list--dropdown .choices__item--selectable.is-highlighted {
+    color: $purple-focus;
+    background-color: transparent;
+  }
+
+  &__user-block {
+    grid-column: 11 / span 2;
+    @include flex-end;
+  }
+}

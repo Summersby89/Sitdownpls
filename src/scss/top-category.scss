@@ -1,0 +1,92 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.top-category {
+  padding-top: 70px;
+  padding-bottom: 70px;
+
+  &__list {
+    grid-auto-rows: minmax(25.3125rem, auto);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: minmax(31.9375rem, auto) minmax(25.3125rem, auto);
+
+    &-item {
+      @include column;
+      padding: 30px 30px 30px;
+      grid-column: span 4;
+      border-radius: $radius;
+      background-color: $grey-light;
+      background-repeat: no-repeat;
+      background-position-y: 60%;
+      &_big {
+        grid-column: span 6;
+      }
+
+      &-sofs {
+        background-image: url("../img/sofs.webp");
+      }
+
+      &-armchairs {
+        background-image: url("../img/armchairs.webp");
+      }
+
+      &-beds {
+        background-image: url("../img/beds.webp");
+      }
+
+      &-dressers {
+        background-image: url("../img/dressers.webp");
+      }
+
+      &-chairs {
+        background-image: url("../img/chairs.webp");
+      }
+    }
+
+    &-type {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 21px;
+
+      &-item {
+        font-size: $middle-font-size;
+        line-height: $prime-line-height;
+        color: $grey-color;
+
+        &:not(:last-child) {
+          margin-right: 30px;
+        }
+
+        &-link {
+          transition: color 0.2s ease-in, background 0.2s ease-in;
+
+          &:hover {
+            color: $purple-color;
+          }
+
+          &:focus-visible {
+            background: $pink-violet;
+            color: $purple-active;
+          }
+
+          &:active {
+            color: $purple-active;
+          }
+
+        }
+      }
+    }
+  }
+
+  &__link-mobile {
+    display: none;
+  }
+
+  &__card-subheading {
+    margin-bottom: auto;
+
+    &-mobile {
+      @include secondary-font;
+    }
+  }
+}

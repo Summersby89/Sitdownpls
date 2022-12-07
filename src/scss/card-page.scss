@@ -1,0 +1,193 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.card-page {
+  padding-bottom: 84px;
+
+  &__container {
+    padding-top: 20px;
+  }
+
+  &__top {
+    grid-row-gap: 16px;
+    grid-template-rows: minmax(auto, 1fr);
+    margin-bottom: 34px;
+  }
+
+  &__descr {
+    grid-column: 7 / span 6;
+    grid-row: span 2 / 2;
+
+    &-text {
+      font-size: $middle-font-size;
+      line-height: $prime-line-height;
+      color: $grey-color;
+      &-margin {
+        margin: 0 0 24px;
+      }
+    }
+
+    &-btns {
+      @include center;
+      flex-direction: column;
+      width: max-content;
+    }
+
+    &-list {
+      display: flex;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      margin: 0;
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 7px;
+      }
+    }
+
+    &-block {
+      position: relative;
+      width: 52.8%;
+
+      &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 2px;
+        width: 100%;
+        border-bottom: 1px dotted $grey-color;
+      }
+    }
+
+    &-btn {
+      display: block;
+      padding: 15px 34px;
+      margin-bottom: 15px;
+      &-basket {
+        position: relative;
+        color: $purple-color;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -3px;
+          width: 100%;
+          height: 1px;
+          background-color: $purple-color;
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+        }
+        &:hover {
+          &::before {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  &__slider-main {
+    max-height: 245px;
+  }
+
+  &__slider-main,
+  &__slider-nav {
+    grid-column: span 6;
+    width: 100%;
+  }
+
+  &__slider-nav {
+    padding: 8px 19px;
+    background-color: $grey-light;
+  }
+
+  &__slider-main .swiper-slide {
+    @include center;
+    flex-shrink: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  &__slider-nav .swiper-slide {
+    @include align-center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    overflow: hidden;
+    max-height: 61px;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  &__slider-main img {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  &__slider-nav img {
+    display: block;
+    width: 95%;
+    height: 95%;
+    object-fit: contain;
+  }
+
+  &__prime-text {
+    font-size: $middle-font-size;
+    line-height: $page-card-line-height;
+    color: $black-color;
+  }
+
+  &__price-title {
+    display: inline-block;
+    margin-bottom: 23px;
+    font-size: 36px;
+    line-height: $card-line-height;
+  }
+
+  &__bottom-col {
+    @include column;
+    grid-column: span 6;
+  }
+
+  &__bottom-left {
+    justify-content: space-between;
+    &-images {
+      @include align-center;
+      justify-content: flex-start;
+      gap: $gap;
+    }
+    &-image {
+      &:first-child {
+        margin-right: 32px;
+      }
+    }
+
+    &-descr-first {
+      margin-bottom: 7px;
+    }
+
+    &-subheading {
+      margin: 0 0 8px;
+      line-height: $prime-line-height;
+    }
+  }
+
+  &__bottom-right {
+    max-width: 34rem;
+
+    &-list-descr {
+      margin: 0;
+      width: min(100%, 13.5rem);
+      line-height: 1;
+      overflow-wrap: break-word;
+    }
+
+    &-list-title {
+      background: $white-color;
+      position: relative;
+    }
+  }
+}

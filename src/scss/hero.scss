@@ -1,0 +1,78 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.hero {
+  padding-top: 30px;
+
+  &__container-mobile {
+    @include center;
+  }
+
+  &__slider {
+    .hero &-container {
+      padding-top: 5rem;
+      padding-bottom: 5.101rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    &-slide {
+      height: auto;
+      &-img {
+        width: 100%;
+      }
+    }
+
+    &-btn_mobile {
+      display: none;
+      min-width: 296px;
+    }
+
+    &-subheading {
+      margin: 0 0 46px;
+      max-width: 563px;
+      font-size: $slider-subheading;
+      line-height: $slider-line-height;
+      color: $grey-color;
+    }
+
+    &-subheading_white {
+      color: $white-color;
+    }
+
+    &-picture {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+  }
+
+  .hero &__swiper-pagination {
+    position: absolute;
+    bottom: 19px;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    .swiper-pagination-bullet {
+      margin: 0;
+      margin-right: 15px;
+      position: relative;
+      width: 22px;
+      height: 22px;
+      border-radius: 100%;
+      background: transparent;
+      opacity: 1;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-right: 4px;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

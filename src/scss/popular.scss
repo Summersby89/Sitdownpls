@@ -1,0 +1,20 @@
+@import "_vars.scss";
+
+.popular {
+  padding-top: 70px;
+  padding-bottom: 68px;
+
+  &__list {
+    margin-bottom: $gap;
+    grid-auto-rows: minmax(26.25rem, auto);
+    &-item {
+      grid-column: span 3;
+    }
+  }
+
+  &__more-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 20px 42px;
+  }
+}

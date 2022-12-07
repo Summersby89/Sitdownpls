@@ -1,0 +1,67 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.form {
+  &__input {
+    padding: 7px 15px;
+    width: 100%;
+    border: 1px solid transparent;
+    border-radius: $radius;
+    font-size: $prime-font-size;
+    line-height: 40px;
+    background: $grey-light;
+    outline: none;
+    transition: background-color 0.2s ease-in, border-color 0.2s ease-in;
+
+    &:hover {
+      background-color: $md-grey;
+    }
+
+    &:focus-visible {
+      border-color: $purple-color;
+      background-color: $pink-light;
+    }
+  }
+
+  &__btn {
+    margin-bottom: 12px;
+    padding: 17px 33px;
+
+    &:hover {
+      background-color: $purple-focus;
+    }
+
+    &:focus-visible {
+      @include focus-btn-style;
+    }
+
+    &:active {
+      background-color: $purple-active;
+    }
+  }
+
+  &__label {
+    display: block;
+    position: relative;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease-in;
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__checkbox-wrap {
+    @include align-center;
+  }
+
+  &__descr {
+    margin: 0 0 12px;
+    font-size: $middle-font-size;
+    line-height: 19px;
+  }
+}
+
+.agreement-link {
+  color: $purple-color;
+}

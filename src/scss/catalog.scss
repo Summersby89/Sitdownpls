@@ -1,0 +1,214 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.catalog {
+  padding-bottom: 50px;
+
+  &__breadcrumbs {
+    margin-bottom: 20px;
+  }
+
+  &__subheading {
+    display: inline-block;
+    margin-right: 17px;
+    font-size: $card-subheading;
+    line-height: $card-line-height;
+  }
+
+  &__mobile-wrapper {
+    display: none;
+  }
+
+  &__filters {
+    grid-column-end: 3 span;
+    grid-row-end: 3 span;
+    &-bottom,
+    &-price {
+      margin-bottom: 20px;
+    }
+
+    &-item {
+      margin-bottom: 16px;
+    }
+
+    &-btn {
+      border-bottom: 1px solid transparent;
+      @include prime-font;
+      color: $purple-color;
+      transition: border-bottom 0.2s ease-in, color 0.2s ease-in,
+        background 0.2s ease-in;
+
+      &:hover {
+        border-color: $purple-color;
+      }
+
+      &:focus-visible {
+        background-color: $purple-focus;
+        color: $white-color;
+      }
+
+      &:active {
+        color: $purple-active;
+        border-color: $purple-active;
+      }
+    }
+
+    &-price-text {
+      margin-right: 10px;
+      @include prime-font;
+      color: $grey-shade;
+    }
+
+    &-subheading {
+      margin: 0 0 20px;
+      @include prime-font;
+      font-weight: 400;
+      color: $black-color;
+    }
+
+    &-price-setting {
+      @include align-center;
+      justify-content: space-between;
+      margin-bottom: 9px;
+    }
+
+    &-price-label {
+      @include align-center;
+    }
+
+    &-price-input {
+      padding: 4px 13px;
+      max-width: 86px;
+      border: 1px solid $grey-color;
+      border-radius: 2px;
+      @include prime-font;
+      color: $grey-shade;
+
+      &:focus-visible {
+        background-color: $pink-violet;
+        border-color: $purple-color;
+      }
+    }
+
+    &-price-input::-webkit-outer-spin-button,
+    &-price-input::-webkit-inner-spin-button {
+      display: none;
+    }
+
+    &-input {
+      &:focus-visible + span::before {
+        background-color: $pink-violet;
+      }
+    }
+
+    &-label {
+      &:hover {
+        .catalog__custom-checkbox-content {
+          color: $purple-color;
+        }
+      }
+    }
+
+    &-label {
+      &:hover {
+        .catalog__custom-checkbox-content {
+          &::before {
+            border-color: $purple-color;
+          }
+        }
+      }
+    }
+  }
+
+  &__values-subheading {
+    margin: 0 0 11px;
+    @include prime-font;
+    color: $grey-shade;
+  }
+
+  &__banner {
+    @include column;
+    border-radius: $radius;
+    background: $black-color;
+    overflow: hidden;
+
+    &-content {
+      flex: 1 1 auto;
+      @include column;
+      padding: 30px;
+    }
+
+    &-subheading {
+      margin: 0;
+      font-family: "Play Fair";
+      font-size: $card-subheading;
+      line-height: 32px;
+      color: #d5b986;
+    }
+
+    &-text {
+      margin: 0 0 13px;
+      @include secondary-font;
+      color: $grey-color;
+    }
+  }
+
+  &__grid-content {
+    grid-column: 9 span;
+  }
+
+  &__content-list {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    margin-bottom: 34px;
+    gap: $gap;
+    &-item {
+      display: none;
+      grid-column: 3 span;
+      height: auto;
+      min-height: 420px;
+    }
+  }
+
+  &__custom-checkbox-content {
+    padding-left: 32px;
+    font-size: $prime-font-size;
+    line-height: $prime-line-height;
+
+    &::before {
+      width: 20px;
+      height: 20px;
+      transition: border-color 0.2s ease-in-out;
+    }
+
+    &::after {
+      top: -2px;
+      width: 20px;
+      height: 20px;
+      border-radius: 3px;
+    }
+  }
+
+  &__choice {
+    @include flex-start;
+    &-list {
+      @include flex-start;
+      flex-wrap: wrap;
+    }
+
+    &-item {
+      margin-right: 20px;
+      margin-bottom: 8px;
+      padding: 7px 11px;
+      border-radius: 3px;
+
+      svg {
+        margin-left: 6px;
+        width: 9px;
+        height: 9px;
+        stroke: var(--color-grey-shade);
+        pointer-events: none;
+      }
+    }
+  }
+}

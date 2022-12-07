@@ -1,0 +1,197 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.modal {
+  @include center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #3333334e;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+
+  &__container {
+    display: none;
+    position: relative;
+    vertical-align: middle;
+    cursor: default;
+    text-align: left;
+    border-radius: $radius;
+    background-color: $white-color;
+  }
+
+  &__slider {
+    padding: 50px 0;
+    max-width: 100%;
+  }
+
+  &__descr {
+    margin-bottom: 30px;
+    max-width: 65%;
+  }
+
+  &__thumbs-slider {
+    padding: 20px 50px;
+    max-width: 100%;
+    background-color: $grey-light;
+  }
+
+  &__subheading {
+    margin-bottom: 9px;
+  }
+
+  &__slider-item {
+    @include center;
+    position: relative;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__thumbs-slide {
+    position: relative;
+    flex-shrink: 0;
+    width: 100%;
+    height: 122px;
+    opacity: 0.8;
+  }
+
+  &__thumbs-btn-next,
+  &__thumbs-btn-prev {
+    display: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid $purple-color;
+    transition: background 0.2s ease-in;
+    &:active {
+      background: $purple-color;
+    }
+
+    &.swiper-button-disabled {
+      border-color: $grey-color;
+    }
+  }
+
+  &__thumbs-btn-prev {
+    transform: rotate(180deg);
+  }
+
+  &-form-icon-close {
+    width: 100%;
+    height: 100%;
+    fill: $grey-color;
+    transition: fill .2s ease-in-out;
+  }
+
+  &-form-btn-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+    &::before {
+      content: "";
+      position: absolute;
+      left: -0.125rem;
+      right: -0.125rem;
+      top: -0.125rem;
+      bottom: -0.125rem;
+      z-index: -1;
+      background-color: $purple-focus;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    &:hover {
+      .modal__form-icon-close {
+        fill: $purple-color;
+      }
+    }
+
+    &:focus-visible {
+      &::before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    &:active {
+      .modal__form-icon-close {
+        fill: $purple-active;
+      }
+    }
+  }
+}
+
+.modal__container.modal-open {
+  @include column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-form {
+  padding: 30px;
+  position: relative;
+  width: 624px;
+  height: 421px;
+  border-radius: $radius;
+  background-color: $white-color;
+}
+
+.modal-gallery {
+  overflow: hidden;
+  max-width: 1280px;
+  max-height: 684px;
+}
+
+.main-popup {
+  display: none;
+  padding: 30px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 50vw;
+  top: 50vh;
+  width: 320px;
+  height: 250px;
+  border-radius: $radius;
+  background-color: $white-color;
+  box-shadow: 0 0 20px 2px $grey-color;
+  transform: translate(-50%, -50%);
+  z-index: 50;
+
+  &__text {
+    font-size: $prime-font-size;
+  }
+}
+
+.thanks-popup {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__img {
+    margin-bottom: 32px;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: $section-subheading;
+  }
+}

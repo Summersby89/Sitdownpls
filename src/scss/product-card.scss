@@ -1,0 +1,90 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.product {
+  &__card {
+    @include column;
+    padding: 30px;
+    height: 100%;
+    background: $grey-light;
+    border-radius: $radius;
+    &-content {
+      flex: 1 1 auto;
+      @include column;
+      align-items: flex-start;
+    }
+    &-picture {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      margin: 0 -1.875rem 1.3rem -1.875rem;
+      padding: 0 1rem;
+      min-height: 8.3125rem;
+    }
+  }
+
+  &__price {
+    margin: 0 0 auto;
+
+    @include prime-font;
+    color: $grey-shade;
+  }
+
+  &__subheading {
+    margin: 0 0 1.5rem;
+  }
+
+  &__model-number {
+    white-space: nowrap;
+  }
+
+  &__btn {
+    padding: 16px 33px;
+    border: 2px solid $purple-color;
+    color: $purple-color;
+    font-weight: 600;
+    background-color: transparent;
+
+    &-content {
+      padding-top: 1.3rem;
+    }
+
+    &:hover {
+      background: $purple-color;
+      color: $white-color;
+    }
+
+    &:focus-visible {
+      @include focus-btn-style;
+      color: $white-color;
+    }
+
+    &:active {
+      border-color: $purple-active;
+      background: $purple-active;
+      color: $white-color;
+    }
+  }
+
+  &__raiting {
+    display: flex;
+    margin-bottom: 10px;
+    transform: translateY(4px);
+
+    &-icon {
+      margin-right: 7px;
+      width: 15px;
+      height: 15px;
+    }
+
+    &-value {
+      color: $orange-color;
+    }
+  }
+
+  &__img {
+    display: block;
+    height: auto;
+    object-fit: contain;
+  }
+}

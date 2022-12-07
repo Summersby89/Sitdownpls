@@ -1,0 +1,44 @@
+@import "_vars.scss";
+@import "_mixins.scss";
+
+.useful {
+  padding-bottom: 71px;
+
+  &__subheading {
+    margin: 0;
+  }
+
+  &__slide,
+  &__img {
+    height: auto;
+  }
+
+  &__card {
+    @include column;
+    height: 100%;
+    border-radius: $radius;
+    overflow: hidden;
+
+    &-picture {
+      display: contents;
+    }
+
+    &-content {
+      flex: 1 1 auto;
+      @include column;
+      padding: 30px;
+      min-height: 11.875rem;
+      background-color: $grey-light;
+    }
+
+    &-subheading {
+      margin: 0 0 auto;
+      line-height: 138%;
+    }
+
+    &-btn {
+      margin-top: 1.875rem;
+      align-self: flex-start;
+    }
+  }
+}

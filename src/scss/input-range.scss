@@ -1,0 +1,66 @@
+@import "_vars.scss";
+
+.noUi-horizontal {
+  height: auto;
+}
+
+.noUi-target {
+  border: none;
+  box-shadow: none;
+  background: $md-grey;
+}
+
+.noUi-base {
+  height: 3px;
+  background-color: $md-grey;
+  cursor: pointer;
+}
+
+.noUi-connects {
+  overflow: hidden;
+  z-index: 0;
+  border-radius: 3px;
+}
+
+.noUi-horizontal .noUi-handle-upper,
+.noUi-horizontal .noUi-handle-lower {
+  position: relative;
+  top: 0;
+  left: 82%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 7.5px 14px;
+  border-color: transparent transparent $purple-color;
+  border-radius: 4px;
+  background: 0 0;
+  box-shadow: none;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    border-bottom-color: $purple-focus;
+  }
+
+  &:active {
+    border-bottom-color: $purple-active;
+  }
+}
+
+.noUi-touch-area {
+  height: 100%;
+  width: 100%;
+}
+
+.noUi-horizontal .noUi-handle-upper {
+  left: 79%;
+}
+
+.noUi-handle:after,
+.noUi-handle:before {
+  display: none;
+}
+
+.noUi-connect {
+  background: $purple-color;
+}

@@ -1,0 +1,271 @@
+@import "_fonts.scss";
+@import "_settings.scss";
+@import "_vars.scss";
+@import "_mixins.scss";
+@import "header.scss";
+@import "hero.scss";
+@import "popular.scss";
+@import "specials.scss";
+@import "useful.scss";
+@import "top-category.scss";
+@import "product-card.scss";
+@import "footer.scss";
+@import "input-range.scss";
+@import "breadcrumbs.scss";
+@import "form.scss";
+@import "swiper-btns.scss";
+@import "catalog.scss";
+@import "banner.scss";
+@import "we-glad.scss";
+@import "card-page.scss";
+@import "cooperations.scss";
+@import "modal.scss";
+@import "zmedia.scss";
+
+.btn-primary {
+  &:hover {
+    background-color: $purple-focus;
+  }
+
+  &:focus-visible {
+    @include focus-btn-style;
+  }
+
+  &:active {
+    background-color: $purple-active;
+  }
+}
+
+.small-arrow-icon {
+  width: 5px;
+  height: 10px;
+  stroke: $purple-color;
+  stroke-width: 2px;
+  transition: stroke 0.2s ease-in;
+}
+
+.logo-icon {
+  width: 187px;
+  height: 27px;
+}
+
+.card-subheading {
+  font-size: $card-subheading;
+  line-height: 115%;
+  font-weight: 400;
+}
+
+.section-header {
+  @include space-between;
+  margin-bottom: 26px;
+}
+
+.active {
+  display: block;
+}
+
+.static-slider-btn-mobile {
+  display: none;
+}
+
+.discount {
+  @include align-center;
+  position: absolute;
+  left: 0;
+  top: 29px;
+  padding: 9px 30px;
+  -webkit-clip-path: polygon(89% 0, 100% 50%, 89% 100%, 0% 100%, 0 50%, 0% 0%);
+  clip-path: polygon(89% 0, 100% 50%, 89% 100%, 0% 100%, 0 50%, 0% 0%);
+  min-width: 58px;
+  background-color: $orange-color;
+
+  &__text {
+    font-size: $middle-font-size;
+    line-height: 19px;
+    font-weight: 700;
+    color: $white-color;
+  }
+}
+
+.pagination-progress {
+  width: 20px;
+  height: 20px;
+  transform: rotate(-90deg);
+}
+
+.pagination-progress__background {
+  stroke: $orange-color;
+  stroke-width: 2px;
+}
+
+.pagination-progress__circle {
+  stroke: $white-color;
+  stroke-dasharray: 200;
+  stroke-linecap: round;
+  stroke-width: 2px;
+}
+
+@keyframes slide-progress {
+  0% {
+    stroke-dashoffset: 158;
+  }
+
+  100% {
+    stroke-dashoffset: 200;
+  }
+}
+
+.card-arrow-icon {
+  margin-left: 7px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid $purple-color;
+  stroke: $purple-color;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  transition: background-color 0.2s ease-in-out, stroke 0.2s ease-in-out,
+  border-color 0.2s ease-in-out;
+}
+
+.in-catalog-link {
+  @include center;
+  align-self: flex-start;
+  position: relative;
+  font-size: $prime-font-size;
+  line-height: $secondary-line-height;
+  color: $purple-color;
+  font-weight: 700;
+  transition: color 0.2s ease-in;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: calc(100% - 27px);
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  &:hover {
+    &::before {
+      background-color: $purple-color;
+    }
+
+    .card-arrow-icon {
+      stroke: $white-color;
+      background-color: $purple-color;
+    }
+  }
+
+  &:focus-visible {
+    &::before {
+      background-color: $purple-focus;
+    }
+
+    .card-arrow-icon {
+      border-color: $purple-color;
+      stroke: $white-color;
+      background-color: $purple-focus;
+    }
+  }
+
+  &:active {
+    color: $purple-active;
+
+    &::before {
+      background-color: $purple-active;
+    }
+
+    .card-arrow-icon {
+      border-color: $purple-active;
+      stroke: $white-color;
+      background-color: $purple-active;
+    }
+  }
+}
+
+.pagination {
+  @include center;
+  width: 100%;
+
+  &__item:not(:last-child) {
+    margin-right: 16px;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 9px;
+    height: 32px;
+    border: 2px solid $purple-color;
+    border-radius: $radius;
+    @include prime-font;
+    font-weight: 600;
+    color: $purple-color;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $purple-color;
+      color: $white-color;
+      border-color: transparent;
+    }
+
+    &:focus-visible {
+      background-color: $purple-focus;
+      color: $white-color;
+      border-color: $purple-color;
+    }
+
+    &:active {
+      background-color: $purple-active;
+      color: $white-color;
+      border-color: transparent;
+    }
+  }
+
+  &__link--current {
+    background-color: $purple-active;
+    color: $white-color;
+    border-color: $purple-active;
+  }
+}
+
+.btn-disabled {
+  color: $grey-color;
+  background: $grey-light;
+  pointer-events: none;
+}
+
+.similar-products {
+  padding-bottom: 70px;
+
+  &__slider {
+    position: relative;
+    overflow: inherit;
+    overflow-x: clip;
+
+    .swiper-wrapper {
+      box-sizing: border-box;
+    }
+  }
+
+  &__slide {
+    height: auto;
+  }
+}
+
+// validations
+
+.js-validate-error-label {
+  position: absolute;
+  top: -16px;
+  left: 17px;
+  font-size: 12px;
+  line-height: 16px;
+}
+

@@ -1,0 +1,58 @@
+@import "_vars.scss";
+
+.specials {
+  padding-top: 69px;
+
+  &__subheading {
+    margin: 0;
+  }
+
+  &__slide {
+    box-sizing: border-box;
+    width: 18.5rem;
+    height: auto;
+
+    &_big {
+      width: 39rem;
+    }
+  }
+
+  &__product {
+    align-items: flex-start;
+    &_big {
+      background-image: url("../img/sofa-z-44-bg.png");
+      background-position: 93% 93%;
+      background-size: auto;
+      background-repeat: no-repeat;
+    }
+
+    &-price {
+      margin-bottom: auto;
+    }
+
+    &-subheading {
+      margin: 0 0 1.3rem;
+      line-height: $card-line-height;
+
+      &_big {
+        max-width: 213px;
+      }
+    }
+
+    &-img {
+      align-self: center;
+      padding-top: 40px;
+      min-height: 269px;
+      &_big {
+        padding-top: 8px;
+      }
+    }
+
+    &-price-main {
+      margin-right: 25px;
+      font-size: $specials-main-price;
+      line-height: $card-line-height;
+      color: $orange-color;
+    }
+  }
+}
