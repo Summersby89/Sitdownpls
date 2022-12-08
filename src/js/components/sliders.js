@@ -18,10 +18,10 @@ const heroSlider = new Swiper('.hero__slider', {
     enabled: true,
     onlyInViewport: false,
   },
-  // autoplay: {
-  //   delay: 3200,
-  //   disableOnInteraction: false,
-  // },
+  autoplay: {
+    delay: 3200,
+    disableOnInteraction: false,
+  },
   a11y: {
     enabled: true,
     prevSlideMessage: 'Предыдущий слайд',
@@ -68,7 +68,6 @@ const specialsSlider = new Swiper('.specials__slider', {
     }
   }
 });
-
 
 // slider useful
 

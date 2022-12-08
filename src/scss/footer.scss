@@ -23,6 +23,42 @@
 
   &__social-list {
     display: flex;
+
+    &-item:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &-link,
+    &-icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    &-link {
+      display: inline-block;
+      transition: background 0.2s ease-in;
+
+      &:focus-visible {
+        background-color: $purple-focus;
+
+        .footer__social-list-icon {
+          fill: $white-color;
+        }
+      }
+    }
+
+    &-icon {
+      fill: $grey-color;
+      transition: fill 0.2s ease-in;
+
+      &:hover {
+        fill: $purple-color;
+      }
+
+      &:active {
+        fill: $purple-active;
+      }
+    }
   }
 
   &__list-subheading {
@@ -30,38 +66,6 @@
     font-size: $prime-font-size;
     line-height: $prime-line-height;
     font-weight: 400;
-  }
-
-  &__social-list-link,
-  &__social-list-icon {
-    width: 30px;
-    height: 30px;
-  }
-
-  &__social-list-link {
-    display: inline-block;
-    transition: background 0.2s ease-in;
-
-    &:focus-visible {
-      background-color: $purple-focus;
-
-      .footer__social-list-icon {
-        fill: $white-color;
-      }
-    }
-  }
-
-  &__social-list-icon {
-    fill: $grey-color;
-    transition: fill 0.2s ease-in;
-
-    &:hover {
-      fill: $purple-color;
-    }
-
-    &:active {
-      fill: $purple-active;
-    }
   }
 
   &__list-link {
@@ -82,10 +86,6 @@
     &:active {
       color: $purple-active;
     }
-  }
-
-  &__social-list-item:not(:last-child) {
-    margin-right: 20px;
   }
 
   &__bottom {

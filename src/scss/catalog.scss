@@ -21,7 +21,6 @@
 
   &__filters {
     grid-column-end: 3 span;
-    grid-row-end: 3 span;
     &-bottom,
     &-price {
       margin-bottom: 20px;
@@ -88,11 +87,11 @@
         background-color: $pink-violet;
         border-color: $purple-color;
       }
-    }
 
-    &-price-input::-webkit-outer-spin-button,
-    &-price-input::-webkit-inner-spin-button {
-      display: none;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        display: none;
+      }
     }
 
     &-input {
@@ -209,6 +208,54 @@
         stroke: var(--color-grey-shade);
         pointer-events: none;
       }
+    }
+  }
+}
+
+.pagination {
+  @include center;
+  width: 100%;
+
+  &__item:not(:last-child) {
+    margin-right: 16px;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 9px;
+    height: 32px;
+    border: 2px solid $purple-color;
+    border-radius: $radius;
+    @include prime-font;
+    font-weight: 600;
+    color: $purple-color;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $purple-color;
+      color: $white-color;
+      border-color: transparent;
+    }
+
+    &:focus-visible {
+      background-color: $purple-focus;
+      color: $white-color;
+      border-color: $purple-color;
+    }
+
+    &:active {
+      background-color: $purple-active;
+      color: $white-color;
+      border-color: transparent;
+    }
+
+    &--current {
+      background-color: $purple-active;
+      color: $white-color;
+      border-color: $purple-active;
     }
   }
 }

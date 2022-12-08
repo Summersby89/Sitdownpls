@@ -34,16 +34,44 @@
       font-size: $slider-subheading;
       line-height: $slider-line-height;
       color: $grey-color;
-    }
 
-    &-subheading_white {
-      color: $white-color;
+      &_white {
+        color: $white-color;
+      }
     }
 
     &-picture {
       position: absolute;
       inset: 0;
       z-index: 1;
+    }
+  }
+
+  .pagination-progress {
+    width: 20px;
+    height: 20px;
+    transform: rotate(-90deg);
+
+    &__background {
+      stroke: $orange-color;
+      stroke-width: 2px;
+    }
+
+    &__circle {
+      stroke: $white-color;
+      stroke-dasharray: 200;
+      stroke-linecap: round;
+      stroke-width: 2px;
+    }
+  }
+
+  @keyframes slide-progress {
+    0% {
+      stroke-dashoffset: 158;
+    }
+
+    100% {
+      stroke-dashoffset: 200;
     }
   }
 

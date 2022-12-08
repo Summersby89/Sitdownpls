@@ -11,7 +11,7 @@ const categorySelect = () => {
 	const formElement = document.querySelector('.header__form-select');
 	const formChoices = new Choices(formElement, {
 		searchEnabled: false,
-		// placeholder: true,
+		placeholder: true,
     itemSelectText: ''
 	});
 

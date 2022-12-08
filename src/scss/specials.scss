@@ -1,4 +1,5 @@
 @import "_vars.scss";
+@import "_mixins.scss";
 
 .specials {
   padding-top: 69px;
@@ -28,6 +29,13 @@
 
     &-price {
       margin-bottom: auto;
+
+      &_orange {
+        margin-right: 25px;
+        font-size: $specials-main-price;
+        line-height: $card-line-height;
+        color: $orange-color;
+      }
     }
 
     &-subheading {
@@ -48,11 +56,23 @@
       }
     }
 
-    &-price-main {
-      margin-right: 25px;
-      font-size: $specials-main-price;
-      line-height: $card-line-height;
-      color: $orange-color;
+    &-discount {
+      @include align-center;
+      position: absolute;
+      left: 0;
+      top: 29px;
+      padding: 9px 30px;
+      -webkit-clip-path: polygon(89% 0, 100% 50%, 89% 100%, 0% 100%, 0 50%, 0% 0%);
+      clip-path: polygon(89% 0, 100% 50%, 89% 100%, 0% 100%, 0 50%, 0% 0%);
+      min-width: 58px;
+      background-color: $orange-color;
+
+      &-text {
+        font-size: $middle-font-size;
+        line-height: 19px;
+        font-weight: 700;
+        color: $white-color;
+      }
     }
   }
 }

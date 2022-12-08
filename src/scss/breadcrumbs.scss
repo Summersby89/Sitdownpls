@@ -7,50 +7,50 @@
 
   &__list {
     display: flex;
-  }
 
-  &__list-item {
-    position: relative;
+    &-item {
+      position: relative;
 
-    &:not(:last-child) {
-      margin-right: 14px;
+      &:not(:last-child) {
+        margin-right: 14px;
+      }
+
+      &:not(:last-child)::after {
+        content: "/";
+        position: absolute;
+        right: -11px;
+        top: 50%;
+        color: $grey-color;
+        transform: translateY(-50%);
+      }
     }
 
-    &:not(:last-child)::after {
-      content: "/";
-      position: absolute;
-      right: -11px;
-      top: 50%;
+    &-link {
+      font-size: $middle-font-size;
+      line-height: $prime-line-height;
       color: $grey-color;
-      transform: translateY(-50%);
-    }
-  }
+      transition: color 0.2s ease-in;
 
-  &__list-link {
-    font-size: $middle-font-size;
-    line-height: $prime-line-height;
-    color: $grey-color;
-    transition: color 0.2s ease-in;
+      &:hover {
+        color: $purple-color;
+      }
 
-    &:hover {
-      color: $purple-color;
-    }
+      &:focus-visible {
+        background-color: $pink-violet;
+        color: $purple-color;
+      }
 
-    &:focus-visible {
-      background-color: $pink-violet;
-      color: $purple-color;
-    }
+      &:active {
+        color: $purple-active;
+      }
+      
+      &_current {
+        color: $purple-active;
 
-    &:active {
-      color: $purple-active;
-    }
-  }
-
-  &__list-link_current {
-    color: $purple-active;
-
-    &:hover {
-      color: $purple-active;
+        &:hover {
+          color: $purple-active;
+        }
+      }
     }
   }
 }

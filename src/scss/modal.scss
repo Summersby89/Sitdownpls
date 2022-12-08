@@ -119,7 +119,7 @@
     }
 
     &:hover {
-      .modal__form-icon-close {
+      .modal-form-icon-close {
         fill: $purple-color;
       }
     }
@@ -131,32 +131,32 @@
       }
     }
     &:active {
-      .modal__form-icon-close {
+      .modal-form-icon-close {
         fill: $purple-active;
       }
     }
   }
-}
 
-.modal__container.modal-open {
-  @include column;
-  justify-content: center;
-  align-items: center;
-}
+  &__container.modal-open {
+    @include column;
+    justify-content: center;
+    align-items: center;
+  }
 
-.modal-form {
-  padding: 30px;
-  position: relative;
-  width: 624px;
-  height: 421px;
-  border-radius: $radius;
-  background-color: $white-color;
-}
+  &-form {
+    padding: 30px;
+    position: relative;
+    width: 624px;
+    height: 421px;
+    border-radius: $radius;
+    background-color: $white-color;
+  }
 
-.modal-gallery {
-  overflow: hidden;
-  max-width: 1280px;
-  max-height: 684px;
+  &-gallery {
+    overflow: hidden;
+    max-width: 1280px;
+    max-height: 684px;
+  }
 }
 
 .main-popup {

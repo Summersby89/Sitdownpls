@@ -1,6 +1,11 @@
 @import "_vars.scss";
 @import "_mixins.scss";
 
+.logo-icon {
+  width: 187px;
+  height: 27px;
+}
+
 .header {
   background: linear-gradient(180deg, #f6f6f6 24%, #fff0 24%);
 
@@ -12,10 +17,33 @@
   &__top-nav {
     grid-column: 5 / span 8;
     padding: 15px 0;
-  }
 
-  &__top-nav-mobile {
-    display: none;
+    &-mobile {
+      display: none;
+    }
+
+    &-list-item:not(:last-child) {
+      margin-right: 64px;
+    }
+
+    &-list-link {
+      font-size: $middle-font-size;
+      line-height: $prime-line-height;
+      color: $grey-color;
+      transition: color 0.2s ease-in, background 0.2s ease-in;
+
+      &:hover {
+        color: $purple-color;
+      }
+
+      &.focus-visible {
+        color: $purple-active;
+      }
+
+      &:active {
+        color: $purple-active;
+      }
+    }
   }
 
   &__region {
@@ -77,6 +105,20 @@
   &__basket {
     margin-left: 42px;
     position: relative;
+
+    &-counter {
+      @include center;
+      position: absolute;
+      top: 4px;
+      left: -9px;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: $orange-color;
+      color: $white-color;
+      @include small-font;
+      pointer-events: none;
+    }
   }
 
   &__account:focus-visible,
@@ -87,20 +129,6 @@
     .header__basket-icon {
       fill: $white-color;
     }
-  }
-
-  &__basket-counter {
-    @include center;
-    position: absolute;
-    top: 4px;
-    left: -9px;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: $orange-color;
-    color: $white-color;
-    @include small-font;
-    pointer-events: none;
   }
 
   &__account,
@@ -157,29 +185,6 @@
     @include align-center;
   }
 
-  &__top-nav-list-item:not(:last-child) {
-    margin-right: 64px;
-  }
-
-  &__top-nav-list-link {
-    font-size: $middle-font-size;
-    line-height: $prime-line-height;
-    color: $grey-color;
-    transition: color 0.2s ease-in, background 0.2s ease-in;
-
-    &:hover {
-      color: $purple-color;
-    }
-
-    &.focus-visible {
-      color: $purple-active;
-    }
-
-    &:active {
-      color: $purple-active;
-    }
-  }
-
   &__bottom-nav-list-item:not(:last-child) {
     margin-right: 93px;
   }
@@ -200,33 +205,33 @@
   &__form {
     @include space-between;
     grid-column: 1 / span 10;
+
+    &-input {
+      padding: 16px 59px;
+      position: relative;
+      width: 100%;
+      height: 60px;
+      background: $grey-light;
+      border: 2px solid transparent;
+      border-radius: $radius 0px 0px $radius;
+      outline: none;
+      transition: background 0.2s ease-in, border-color 0.2s ease-in;
+
+      &:hover {
+        background: $md-grey;
+      }
+
+      &.focus-visible {
+        border-color: $purple-active;
+        background: $pink-light;
+      }
+    }
   }
 
   &__search-inner {
     @include align-center;
     position: relative;
     width: 100%;
-  }
-
-  &__form-input {
-    padding: 16px 59px;
-    position: relative;
-    width: 100%;
-    height: 60px;
-    background: $grey-light;
-    border: 2px solid transparent;
-    border-radius: $radius 0px 0px $radius;
-    outline: none;
-    transition: background 0.2s ease-in, border-color 0.2s ease-in;
-
-    &:hover {
-      background: $md-grey;
-    }
-
-    &.focus-visible {
-      border-color: $purple-active;
-      background: $pink-light;
-    }
   }
 
   &__search-icon {

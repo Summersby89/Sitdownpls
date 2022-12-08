@@ -1,0 +1,11 @@
+.similar-products {
+  padding-bottom: 70px;
+
+    .swiper-wrapper {
+      box-sizing: border-box;
+    }
+
+  &__slide {
+    height: auto;
+  }
+}
