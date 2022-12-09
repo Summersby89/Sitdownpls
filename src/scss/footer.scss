@@ -2,13 +2,14 @@
 @import "_mixins.scss";
 
 .footer {
+
+  &__left {
+    grid-column: span 2;
+  }
+
   &__top {
     padding: 26px 0 18px;
     background-color: $md-grey;
-  }
-
-  &__container {
-    @include space-between;
   }
 
   &__logo {
@@ -17,8 +18,8 @@
   }
 
   &__nav {
+    grid-column: 5 / span 8;
     @include space-between;
-    width: 65.859%;
   }
 
   &__social-list {
